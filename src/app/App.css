@@ -1,0 +1,357 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Noto Sans',sans-serif,Helvetica;
+}
+a {
+	text-decoration: none;
+}
+body {
+	background-color: rgba(255,225,0,.9);
+}
+nav {
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+	gap: 15px;
+	padding: 16px;
+	background-color: #ed1c24;
+	position: sticky;
+	position: -webkit-sticky;
+	top: 0;
+	box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+	z-index: 999;
+}
+nav img {
+	height: 40px;
+}
+
+.row {
+	display: flex;
+	padding: 16px;
+}
+.row .column-6 {
+	flex-basis: 50%;
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+}
+.row .column-6 {
+	flex-basis: 50%;
+}
+.row .column-6.button-view {
+	padding: 17px;
+	background-color: #faffd830;
+	border-radius: 11px;
+	box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
+.row .column-6.content-view .more-details {
+	position: fixed;
+	min-height: calc(100vh - 96px);
+}
+
+.pokemon-list {
+	display: grid;
+	grid-template-columns: repeat(2, calc(50% - 8px));
+	gap: 16px;
+}
+.single-pokemon {
+	cursor: pointer;
+	background-color: #f6ffea;
+	width: 250px;
+	border-radius: 11px;
+	text-align: center;
+	padding: 10px;
+	box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+}
+.single-pokemon img {
+	width: 45px;
+}
+.single-pokemon p {
+	text-transform: capitalize;
+}
+
+.more-details {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+.more-details .details-box {
+	padding: 6px 17px 6px 17px;
+	background-color: #f6ffea;
+	margin-top: 30px;
+	border-radius: 10px;
+}
+.more-details img {
+	width: 250px;
+	max-height: 210px;
+	filter: drop-shadow(5px 5px 5px hsl(0deg 0% 0% / 0.5));
+}
+.more-details .name span,
+.name {
+	text-transform: capitalize;
+}
+.more-details div p {
+	margin: 6px 0px;
+	text-align: left;
+}
+
+.pagination {
+	display: flex;
+	gap: 16px;
+	margin-top: 20px;
+}
+.pagination button {
+	color: white;
+	font-weight: 500;
+	cursor: pointer;
+	padding: 7px 14px;
+	background-color: #ed1c24;
+}
+.pagination button[disabled] {
+	cursor: not-allowed;
+}
+
+.loading-section {
+	height: 100vh;
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	position: fixed;
+	background-color: rgba(255, 255, 255, 0.431);
+	top: 0;
+	left: 0;
+	z-index: 999;
+}
+.loading-section img {
+	width: 300px;
+}
+
+.no-data {
+	text-align: center;
+	font-size: 18px;
+}
+
+.error-page {
+	height: calc(100vh - 157px);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	gap: 20px;
+}
+.error-page button, .not-found-case button {
+	cursor: pointer;
+	padding: 7px 14px;
+	font-size: 16px;
+}
+.error-page h1 {
+	text-align: center;
+}
+.error-heading {
+	text-align: center;
+	margin-top: 50px;
+}
+
+.not-found-case {
+	text-align: center;
+}
+.not-found-case p {
+	margin-bottom: 30px;
+}
+
+.poke-types {
+	background-color: #73a9ad;
+	padding: 3px 7px;
+	display: inline-block;
+	margin-right: 5px;
+	border-radius: 5px;
+	font-size: 13px;
+	cursor: default;
+	color: white;
+}
+.bug {
+	background-color: #a8c59f;
+}
+.water {
+	background-color: rgb(17, 213, 213);
+}
+.fire {
+	background-color: #e25822;
+}
+.electric {
+	background-color: #F8D030;
+	color: black;
+}
+.dragon {
+	background-color: #8d5153;
+}
+.poison {
+	background-color: #00FF00;
+}
+.grass {
+	background-color: #567d46 ;
+}
+.normal {
+	background-color: #c9c9c9;
+	color: black;
+}
+.flying {
+	background-color: #a890f0;
+}
+.rock {
+	background-color: #3a3232;
+}
+.ground {
+	background-color: gray;
+}
+.psychic {
+	background-color: #f85888;
+}
+.dark {
+	background-color: #705848;
+}
+.steel {
+	background-color: #71797E;
+}
+.fighting {
+	background-color: #c03028;
+}
+.ice {
+	background-color: rgb(226, 255, 255);
+	color: black;
+	border: 1px solid rgba(0, 0, 0, 0.343);
+}
+.ghost {
+	background-color: #705898;
+}
+.fairy {
+	background-color: gold;
+}
+
+footer {
+	color: #f6ffea;
+	position: relative;
+	width: 100%;
+	display: flex;
+	background-color: #ed1c24;
+	border: 1px solid #dbdbbd;
+	place-content: center;
+	font-size: 14px;
+	padding: 14px 10px;
+	text-align: center;
+	margin-top: 44px;
+}
+footer .footer-section {
+	display: flex;
+	row-gap: 10px;
+	column-gap: 6px;
+	flex-wrap: wrap;
+	place-content: center;
+}
+footer .footer-section a {
+	color: #f6ffea;
+	text-decoration: underline;
+}
+footer .footer-section a:last-child {
+	text-decoration: none;
+}
+footer .footer-section a span {
+	border: 1px solid #c9c9c9;
+	padding: 4px 11px;
+	border-radius: 50px;
+}
+
+@media (max-width: 969px) {
+	.row {
+		flex-direction: column-reverse;
+	}
+	.row .column-6.content-view .more-details {
+		position: static;
+		min-height: unset;
+		margin-bottom: 30px;
+	}
+	.more-details {
+		display: flex;
+		flex-direction: row;
+		gap: 35px;
+		height: auto;
+		align-items: center;
+	}
+	.more-details .details-box {
+		border: none;
+		border-left: 1px solid #e3e3e3;
+		padding-left: 12px;
+	}
+	.more-details .details-box p {
+		text-align: left;
+	}
+	.search-view {
+		flex-direction: column;
+	}
+}
+
+@media (max-width: 576px) {
+	.pokemon-list {
+		width: 100%;
+	}
+	.single-pokemon {
+		width: 100%;
+	}
+
+	.more-details .details-box {
+		padding: 17px;
+		border: 1px dashed black;
+		
+	}
+	.more-details .details-box p:first-child {
+		margin-top: 0px;
+	}
+	.more-details .details-box p:last-child {
+		margin-bottom: 0px;
+	}
+}
+
+@media (max-width: 557px) {
+	.search-view {
+		margin: 17px;
+	}
+}
+
+@media (max-width: 500px) {
+	.more-details {
+		flex-direction: column;
+		gap: 0;
+	}
+	.more-details div {
+		border-left: none;
+		padding-left: 0;
+	}
+	.more-details div p {
+		text-align: center;
+	}
+	.search-view .search-img img {
+		width: 100%;
+		height: auto;
+	}
+}
+
+@media (max-width: 440px) {
+	footer .footer-section {
+		flex-direction: column;
+	}
+	footer div > span:nth-child(3) {
+		display: none;
+	}
+	.search-box #search {
+		padding: 10px 9px;
+		font-size: 12px;
+	}
+	.search-box input:nth-child(2) {
+		padding: 2px;
+		font-size: 12px;
+	}
+}
