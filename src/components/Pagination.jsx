@@ -1,5 +1,6 @@
 const Pagination = ({ handleNext, handlePrevious, offset, count }) => {
-	
+// Defining a functional component called Pagination
+// It takes four props: handleNext, handlePrevious, offset, and count
 	return (
 		<div className="pagination">
 			<button onClick={handlePrevious} disabled={offset <= 0}>
